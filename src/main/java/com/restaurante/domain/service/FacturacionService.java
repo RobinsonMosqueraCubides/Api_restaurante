@@ -7,6 +7,8 @@ import com.restaurante.domain.port.output.FacturaRepository;
 import com.restaurante.domain.port.output.PedidoRepository;
 import com.restaurante.domain.port.output.MesaRepository;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +27,7 @@ public class FacturacionService implements FacturacionUseCase {
         this.mesaRepository = mesaRepository;
     }
 
+    @Transactional
     @Override
     public Factura generarFactura(Long pedidoId, String metodoPago) {
         Pedido pedido = pedidoRepository.buscarPorId(pedidoId)

@@ -6,6 +6,8 @@ import com.restaurante.domain.port.output.PedidoRepository;
 import com.restaurante.domain.port.output.PlatoRepository;
 import com.restaurante.domain.port.output.MesaRepository;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +25,7 @@ public class TomarPedidoService implements TomarPedidoUseCase {
         this.mesaRepository = mesaRepository;
     }
 
+    @Transactional
     @Override
     public Pedido crearPedido(Long mesaId, Long clienteId, Long usuarioId) {
         Mesa mesa = mesaRepository.buscarPorId(mesaId)
@@ -40,6 +43,7 @@ public class TomarPedidoService implements TomarPedidoUseCase {
         return pedidoRepository.guardar(pedido);
     }
 
+    @Transactional
     @Override
     public void agregarPlatoAPedido(Long pedidoId, Long platoId, int cantidad) {
         Pedido pedido = pedidoRepository.buscarPorId(pedidoId)
@@ -59,6 +63,7 @@ public class TomarPedidoService implements TomarPedidoUseCase {
         pedidoRepository.guardar(pedido);
     }
 
+    @Transactional
     @Override
     public void quitarPlatoDePedido(Long pedidoId, Long detalleId) {
         Pedido pedido = pedidoRepository.buscarPorId(pedidoId)
@@ -83,6 +88,7 @@ public class TomarPedidoService implements TomarPedidoUseCase {
         return pedidoRepository.buscarPorId(id);
     }
 
+    @Transactional
     @Override
     public void marcarEnPreparacion(Long pedidoId) {
         Pedido pedido = pedidoRepository.buscarPorId(pedidoId)
@@ -91,6 +97,7 @@ public class TomarPedidoService implements TomarPedidoUseCase {
         pedidoRepository.guardar(pedido);
     }
 
+    @Transactional
     @Override
     public void marcarEntregado(Long pedidoId) {
         Pedido pedido = pedidoRepository.buscarPorId(pedidoId)
@@ -99,6 +106,7 @@ public class TomarPedidoService implements TomarPedidoUseCase {
         pedidoRepository.guardar(pedido);
     }
 
+    @Transactional
     @Override
     public void cancelarPedido(Long pedidoId) {
         Pedido pedido = pedidoRepository.buscarPorId(pedidoId)

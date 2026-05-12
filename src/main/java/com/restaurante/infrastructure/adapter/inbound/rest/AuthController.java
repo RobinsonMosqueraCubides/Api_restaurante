@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -19,21 +20,28 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Usuario> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<UsuarioResponse> login(@RequestBody LoginRequest request) {
         return autenticacion.login(request.getUsuario(), request.getContrasena())
-            .map(ResponseEntity::ok)
+            .map(u -> ResponseEntity.ok(toResponse(u)))
             .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Usuario> registrar(@RequestBody RegisterRequest request) {
+    public ResponseEntity<UsuarioResponse> registrar(@RequestBody RegisterRequest request) {
         Usuario usuario = autenticacion.registrarUsuario(
             request.getNombre(), request.getRol(), request.getUsuario(), request.getContrasena());
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+        return ResponseEntity.status(HttpStatus.CREATED).body(toResponse(usuario));
     }
 
     @GetMapping("/usuarios")
-    public ResponseEntity<List<Usuario>> listar() {
-        return ResponseEntity.ok(autenticacion.listarUsuarios());
+    public ResponseEntity<List<UsuarioResponse>> listar() {
+        List<UsuarioResponse> usuarios = autenticacion.listarUsuarios().stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(usuarios);
+    }
+
+    private UsuarioResponse toResponse(Usuario u) {
+        return new UsuarioResponse(u.getId(), u.getNombre(), u.getRol(), u.getUsuario());
     }
 }

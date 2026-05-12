@@ -31,7 +31,7 @@ public class PedidoEntity {
     @Column(precision = 10, scale = 2)
     private BigDecimal total = BigDecimal.ZERO;
 
-    @OneToMany(mappedBy = "pedidoId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Transient
     private List<DetallePedidoEntity> detalle = new ArrayList<>();
 
     public Long getId() { return id; }

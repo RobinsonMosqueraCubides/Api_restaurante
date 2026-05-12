@@ -1,8 +1,16 @@
 package com.restaurante.infrastructure.adapter.inbound.rest;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public class ClienteRequest {
+
+    @NotBlank(message = "El nombre es obligatorio")
     private String nombre;
+
     private String telefono;
+
+    @Email(message = "El email debe ser valido")
     private String email;
 
     public String getNombre() { return nombre; }

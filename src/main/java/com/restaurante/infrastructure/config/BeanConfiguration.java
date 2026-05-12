@@ -7,6 +7,7 @@ import com.restaurante.infrastructure.adapter.outbound.persistence.adapter.*;
 import com.restaurante.infrastructure.adapter.outbound.persistence.jpa.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class BeanConfiguration {
@@ -70,7 +71,12 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public AutenticacionUseCase autenticacionUseCase(UsuarioRepository usuarioRepo) {
-        return new AutenticacionService(usuarioRepo);
+    public AutenticacionUseCase autenticacionUseCase(UsuarioRepository usuarioRepo, PasswordEncoder passwordEncoder) {
+        return new AutenticacionService(usuarioRepo, passwordEncoder);
+    }
+
+    @Bean
+    public GestionClientesUseCase gestionClientesUseCase(ClienteRepository clienteRepo) {
+        return new GestionClientesService(clienteRepo);
     }
 }

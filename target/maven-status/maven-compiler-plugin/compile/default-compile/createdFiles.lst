@@ -5,9 +5,11 @@ com/restaurante/domain/port/input/TomarPedidoUseCase.class
 com/restaurante/infrastructure/adapter/inbound/rest/MesaController.class
 com/restaurante/infrastructure/adapter/outbound/persistence/entity/UsuarioEntity.class
 com/restaurante/infrastructure/adapter/inbound/rest/AuthController.class
+com/restaurante/infrastructure/adapter/inbound/rest/AgregarPlatoRequest.class
 com/restaurante/domain/port/output/ClienteRepository.class
 com/restaurante/domain/model/Cliente.class
 com/restaurante/domain/port/output/PlatoRepository.class
+com/restaurante/infrastructure/config/JwtAuthenticationFilter.class
 com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaFacturaRepositoryAdapter.class
 com/restaurante/domain/port/input/GestionMenuUseCase.class
 com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaCategoriaRepositoryAdapter.class
@@ -21,6 +23,7 @@ com/restaurante/domain/port/output/MesaRepository.class
 com/restaurante/infrastructure/adapter/outbound/persistence/entity/PedidoEntity.class
 com/restaurante/infrastructure/adapter/outbound/persistence/entity/MesaEntity.class
 com/restaurante/infrastructure/adapter/inbound/rest/CrearCategoriaRequest.class
+com/restaurante/infrastructure/adapter/inbound/rest/UsuarioResponse.class
 com/restaurante/domain/port/output/CategoriaRepository.class
 com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaPlatoRepositoryAdapter.class
 com/restaurante/domain/model/Factura.class
@@ -29,14 +32,17 @@ com/restaurante/domain/model/Categoria.class
 com/restaurante/infrastructure/adapter/inbound/rest/RegisterRequest.class
 com/restaurante/domain/port/input/GestionMesasUseCase.class
 com/restaurante/domain/service/AutenticacionService.class
+com/restaurante/domain/service/GestionClientesService.class
 com/restaurante/domain/port/output/PedidoRepository.class
 com/restaurante/infrastructure/adapter/outbound/persistence/jpa/SpringDataCategoriaRepository.class
 com/restaurante/infrastructure/adapter/outbound/persistence/entity/CategoriaEntity.class
 com/restaurante/infrastructure/adapter/inbound/rest/FacturaController.class
 com/restaurante/domain/model/DetallePedido.class
+com/restaurante/infrastructure/config/JwtService.class
 com/restaurante/domain/port/input/AutenticacionUseCase.class
 com/restaurante/infrastructure/adapter/outbound/persistence/jpa/SpringDataPlatoRepository.class
 com/restaurante/infrastructure/adapter/inbound/rest/ClienteController.class
+com/restaurante/domain/port/input/GestionClientesUseCase.class
 com/restaurante/domain/model/Plato.class
 com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaPedidoRepositoryAdapter.class
 com/restaurante/infrastructure/config/SecurityConfig.class
@@ -48,6 +54,7 @@ com/restaurante/infrastructure/adapter/inbound/rest/CrearPlatoRequest.class
 com/restaurante/infrastructure/adapter/outbound/persistence/entity/DetallePedidoEntity.class
 com/restaurante/domain/model/Usuario.class
 com/restaurante/infrastructure/adapter/outbound/persistence/jpa/SpringDataUsuarioRepository.class
+com/restaurante/infrastructure/config/GlobalExceptionHandler.class
 com/restaurante/infrastructure/config/OpenApiConfig.class
 com/restaurante/infrastructure/adapter/inbound/rest/PlatoController.class
 com/restaurante/domain/model/Pedido.class

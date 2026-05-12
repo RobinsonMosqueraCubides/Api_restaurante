@@ -1,4 +1,5 @@
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/port/output/CategoriaRepository.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/AgregarPlatoRequest.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/CrearCategoriaRequest.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/model/Mesa.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/CrearPedidoRequest.java
@@ -9,10 +10,12 @@
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/port/input/TomarPedidoUseCase.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/jpa/SpringDataCategoriaRepository.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/MesaEntity.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/config/GlobalExceptionHandler.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/model/Categoria.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaClienteRepositoryAdapter.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/PlatoController.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/port/input/GestionMenuUseCase.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/port/input/GestionClientesUseCase.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/model/DetallePedido.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/jpa/SpringDataUsuarioRepository.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/FacturaController.java
@@ -35,12 +38,14 @@
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/port/output/PlatoRepository.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaCategoriaRepositoryAdapter.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/ClienteEntity.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/service/GestionClientesService.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/DetallePedidoEntity.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaPedidoRepositoryAdapter.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/ClienteController.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/service/TomarPedidoService.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/jpa/SpringDataPlatoRepository.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaPlatoRepositoryAdapter.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/config/JwtService.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/PedidoEntity.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/adapter/JpaUsuarioRepositoryAdapter.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/CategoriaEntity.java
@@ -49,6 +54,7 @@
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/config/SecurityConfig.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/port/output/FacturaRepository.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/LoginRequest.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/UsuarioResponse.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/FacturaEntity.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/model/Plato.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/PedidoController.java
@@ -56,6 +62,7 @@
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/inbound/rest/CategoriaController.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/service/GestionMenuService.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/model/Cliente.java
+/home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/config/JwtAuthenticationFilter.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/config/OpenApiConfig.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/infrastructure/adapter/outbound/persistence/entity/UsuarioEntity.java
 /home/robinson/programacion_telegram/Api_restaurante/src/main/java/com/restaurante/domain/model/Usuario.java

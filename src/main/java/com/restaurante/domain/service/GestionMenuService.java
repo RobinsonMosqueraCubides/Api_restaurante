@@ -6,6 +6,8 @@ import com.restaurante.domain.port.input.GestionMenuUseCase;
 import com.restaurante.domain.port.output.CategoriaRepository;
 import com.restaurante.domain.port.output.PlatoRepository;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +23,7 @@ public class GestionMenuService implements GestionMenuUseCase {
         this.platoRepository = platoRepository;
     }
 
+    @Transactional
     @Override
     public Categoria crearCategoria(String nombre, String descripcion) {
         Categoria categoria = new Categoria(nombre, descripcion);
@@ -37,6 +40,7 @@ public class GestionMenuService implements GestionMenuUseCase {
         return categoriaRepository.buscarPorId(id);
     }
 
+    @Transactional
     @Override
     public Categoria actualizarCategoria(Long id, String nombre, String descripcion) {
         Categoria categoria = categoriaRepository.buscarPorId(id)
@@ -46,11 +50,13 @@ public class GestionMenuService implements GestionMenuUseCase {
         return categoriaRepository.guardar(categoria);
     }
 
+    @Transactional
     @Override
     public void eliminarCategoria(Long id) {
         categoriaRepository.eliminarPorId(id);
     }
 
+    @Transactional
     @Override
     public Plato crearPlato(Long categoriaId, String nombre, String descripcion, BigDecimal precio) {
         if (precio.compareTo(BigDecimal.ZERO) <= 0) {
@@ -79,6 +85,7 @@ public class GestionMenuService implements GestionMenuUseCase {
         return platoRepository.buscarPorId(id);
     }
 
+    @Transactional
     @Override
     public Plato actualizarPlato(Long id, Long categoriaId, String nombre, BigDecimal precio) {
         Plato plato = platoRepository.buscarPorId(id)
@@ -89,6 +96,7 @@ public class GestionMenuService implements GestionMenuUseCase {
         return platoRepository.guardar(plato);
     }
 
+    @Transactional
     @Override
     public void cambiarDisponibilidadPlato(Long id, boolean disponible) {
         Plato plato = platoRepository.buscarPorId(id)
@@ -97,6 +105,7 @@ public class GestionMenuService implements GestionMenuUseCase {
         platoRepository.guardar(plato);
     }
 
+    @Transactional
     @Override
     public void eliminarPlato(Long id) {
         platoRepository.eliminarPorId(id);
